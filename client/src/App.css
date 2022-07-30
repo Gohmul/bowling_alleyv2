@@ -1,0 +1,52 @@
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    height:3em;
+    font-size: 25px;
+  }
+
+  .home:hover {
+    opacity: 0.8;
+    border:0.1em solid aqua;
+    border-radius:0.12em;
+    cursor: pointer;
+    background-color: rgb(0, 166, 166);
+  }
+  .about:hover {
+    opacity: 0.8;
+    border:0.1em solid aqua;
+    border-radius:0.12em;
+    cursor: pointer;
+    background-color: rgb(0, 166, 166);
+
+  }
+
+  .shop-Card:hover {
+    opacity: 0.8;
+  border:0.1em solid rgb(0, 166, 166);
+  border-radius:0.12em;
+  cursor: pointer;
+  }
+
+  .shop-Card {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em;
+    background-color: aqua;
+  }
+
+  .party-Card:hover {
+    opacity: 0.8;
+  border:0.1em solid rgb(0, 166, 166);
+  border-radius:0.12em;
+  cursor: pointer;
+  }
+
+  .party-Card {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em;
+    background-color: aqua;
+  }
