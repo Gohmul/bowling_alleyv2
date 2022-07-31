@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-const PartyCard = (props) => {
+const CreateParty = (props) => {
   const { id } = useParams()
   const navigate = useNavigate()
   const initialState = {
@@ -18,7 +18,7 @@ const PartyCard = (props) => {
     }
     const handleSubmit = async event => {
       event.preventDefault()
-      let res = await axios.put(`http://localhost:3001/party/${id}`, formState)
+      let res = await axios.post(`http://localhost:3001/party`, formState)
       navigate("/party")
     }
 
@@ -38,4 +38,4 @@ return (
 )
 }
 
-export default PartyCard
+export default CreateParty

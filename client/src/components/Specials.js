@@ -1,5 +1,9 @@
 const specials = () => {
-  return <h1>Welcome to Sauce Bowl Specials!</h1>;
+  return (
+    <h1>
+      Welcome to Sauce Bowl Specials! <br /> SURPRISE WE HAVE NO SPECIALS
+    </h1>
+  );
 };
 
 export default specials;

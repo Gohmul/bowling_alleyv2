@@ -43,7 +43,7 @@ const updateShop = async (req, res) => {
   try {
     const { id } = req.params;
     await Shop.findByIdAndUpdate(id, req.body, { new: true });
-    return res.status(200).json({ shop });
+    return res.status(200).send("Order Created");
   } catch (error) {
     return res.status(500).send(error.message);
   }
@@ -53,7 +53,7 @@ const updateParty = async (req, res) => {
   try {
     const { id } = req.params;
     await Party.findByIdAndUpdate(id, req.body, { new: true });
-    return res.status(200).json({ party });
+    return res.status(200).send("Party edited");
   } catch (error) {
     return res.status(500).send(error.message);
   }

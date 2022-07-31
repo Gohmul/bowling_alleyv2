@@ -1,16 +1,16 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-const PartyCard = (props) => {
+const CreateShop = (props) => {
   const { id } = useParams()
   const navigate = useNavigate()
   const initialState = {
     name:"",
     email:"",
-    cname:"",
-    package:"",
-    date:"",
-    time:""};
+    bname:"",
+    bcompany:"",
+    weight:""}
+
      const [formState, setFormState] = useState(initialState)
       const handleChange = event => {
       console.log("Change")
@@ -18,19 +18,18 @@ const PartyCard = (props) => {
     }
     const handleSubmit = async event => {
       event.preventDefault()
-      let res = await axios.put(`http://localhost:3001/party/${id}`, formState)
-      navigate("/party")
+      let res = await axios.post(`http://localhost:3001/proshop`, formState)
+      navigate("/proshop")
     }
 
 return ( 
-      <div className="party-Card">
+      <div className="Shop-Card">
         <form onSubmit={handleSubmit}>
         <input placeholder="name" id="name" onChange={handleChange}/>
         <input placeholder="email" id="email" onChange={handleChange}/>
-        <input placeholder="childs name" id="cname" onChange={handleChange}/>
-        <input placeholder="package number" id="package" onChange={handleChange}/>
-        <input placeholder="date" id ="date" onChange={handleChange}/>
-        <input placeholder="time" id ="time" onChange={handleChange}/>
+        <input placeholder="ball" id="bname" onChange={handleChange}/>
+        <input placeholder="company" id ="bcompany" onChange={handleChange}/>
+        <input placeholder="weight" id ="weight" onChange={handleChange}/>
 
         <button type="submit">Save</button>
         </form> 
@@ -38,4 +37,4 @@ return (
 )
 }
 
-export default PartyCard
+export default CreateShop

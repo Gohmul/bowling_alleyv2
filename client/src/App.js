@@ -1,5 +1,5 @@
-import { Route, Routes } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Header from "./components/Header";
@@ -10,9 +10,11 @@ import League from "./components/League";
 import Food from "./components/Food";
 import Party from "./components/Party";
 import PartyCard from "./components/PartyCard";
+import CreateParty from "./components/CreateParty";
 import "./App.css";
 import { useState } from "react";
 import axios from "axios";
+import CreateShop from "./components/CreateShop";
 const App = () => {
   const [shopSelect, setShopSelect] = useState([]);
   const [partySelect, setPartySelect] = useState([]);
@@ -43,7 +45,7 @@ const App = () => {
             path="/proshop"
             element={<ProShop getShop={getShop} shopSelect={shopSelect} />}
           />
-          <Route path="proshop-card" element={<ProShopCard />} />
+          <Route path="shop-card/:id" element={<ProShopCard />} />
           <Route path="/specials" element={<Specials />} />
           <Route path="/food" element={<Food />} />
           <Route path="/leagues" element={<League />} />
@@ -52,10 +54,12 @@ const App = () => {
             element={<Party getParty={getParty} partySelect={partySelect} />}
           />
           <Route
-            path="/party-card"
+            path="/party-card/:id"
             handlePartySelect={handlePartySelect}
             element={<PartyCard />}
           />
+          <Route path="party/party-add" element={<CreateParty />} />
+          <Route path="proshop/shop-add" element={<CreateShop />} />
         </Routes>
       </main>
     </div>
