@@ -8,7 +8,7 @@ require("dotenv").config(); // Add this line
 let dbUrl =
   process.env.NODE_ENV === "production"
     ? process.env.MONGODB_URI
-    : "mongodb://127.0.0.1:27017/BowlingAlley";
+    : "mongodb://127.0.0.1:27017/bowlingalleyDB";
 
 mongoose
   .connect(dbUrl)
